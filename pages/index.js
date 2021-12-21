@@ -16,7 +16,7 @@ export default function Home({ currentUser, session, supabase }) {
                 <title>NextJS And Supabase Chat App</title>
             </Head>
 
-            <main className="flex flex-col justify-center items-center">
+            <main className="container flex flex-col justify-center items-center">
                 {loggedIn ? <Chat currentUser={currentUser} session={session} supabase={supabase} /> : <Auth supabase={supabase} />}
             </main>
 

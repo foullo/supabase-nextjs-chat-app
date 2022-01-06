@@ -129,35 +129,39 @@ const Chat = ({ currentUser, session, supabase }) => {
 
     return (
     <>
-        <div className="container flex justify-between items-center py-4 fixed top-0 left-0 right-0">
-            <h1 className="font-bold uppercase">Supabase Chat </h1>
+        <div className="flex justify-between bg-red-300 items-center py-2 px-10 fixed top-0 left-0 right-0">
+            <div className="sm:w-full"><h1 className="font-bold uppercase">Supabase Chat </h1></div>
 
-            <div className="flex space-between">
-                <button
-                    className="bg-gray-700
-                        text-white py-2 px-4 mr-2"
-                >
-                    Bienvenue, { currentUser.username ? currentUser.username : session.user.email }
-                </button>
+            <div className="flex">
                 <div>
+                    <button
+                        className="text-sm bg-gray-700
+                        text-white py-2 px-2 mr-2 hover:text-gray-900 hover:bg-teal-200"
+                    >
+                        Bienvenue, { currentUser.username ? currentUser.username : session.user.email }
+                    </button>
+
+                </div>
+
+                <div className="justify-evenly">
                     {editingUsername ? (
-                        <form onSubmit={setUsername}>
+                        <form className="flex justify-between" onSubmit={setUsername}>
                             <input className="border-solid border-2 border-light-blue-500 " placeholder="Nouveau nom" required ref={newUsername}/>
-                            <button className="bg-blue-500
-                        text-white py-2 px-4 mr-2" type="submit">Changer Votre Nom</button>
+                            <button className="text-sm bg-blue-500
+                        text-white py-2 px-4 mr-2 hover:text-gray-900 hover:bg-teal-200" type="submit">Changer Votre Nom</button>
 
                         </form>
                     ) : (
-                        <div>
+                        <div className="flex justify-between">
                             <button
-                                className="bg-gray-700
-                        text-white py-2 px-4 mr-2"
+                                className="text-sm bg-gray-700
+                        text-white py-2 px-4 mr-2 hover:text-gray-900 hover:bg-teal-200"
                                 onClick={() => setEditingUsername(true)}>Modifier Votre Nom
                             </button>
 
                             <button
-                                className="bg-blue-500
-                        text-white py-2 px-4 mr-2"
+                                className="text-sm bg-blue-500
+                        text-white py-2 px-4 mr-2 hover:text-gray-900 hover:bg-red-500"
                                 onClick={evt => logout(evt)}>D&eacute;connexion
                             </button>
                         </div>
@@ -169,7 +173,7 @@ const Chat = ({ currentUser, session, supabase }) => {
 
 
     <div className="bg-white flex flex-col justify-center items-center my-10 mx-auto py-20">
-        <h1 className="lg:text-7xl md:text-5xl sm:text-4xl text-3xl font-black mb-14">Chat App Supabase avec NextJS</h1>
+        <h1 className="lg:text-xl md:text-md sm:text-sm font-black mb-14">Chat App Supabase avec NextJS</h1>
 
         {/*<p>Bienvenue, { currentUser.username ? currentUser.username : session.user.email }</p>*/}
 

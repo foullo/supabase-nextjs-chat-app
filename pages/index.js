@@ -11,7 +11,7 @@ export default function Home({ currentUser, session, supabase }) {
         setLoggedIn(!!session)
     }, [session])
     return (
-        <div className="container w-full">
+        <div className="container-md">
             <Head>
                 <title>NextJS And Supabase Chat App</title>
             </Head>
